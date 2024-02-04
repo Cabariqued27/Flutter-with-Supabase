@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/ui/widgets/my_button_widget.dart';
 
 class ExerciseDescriptionWidget extends StatelessWidget {
   final String texto;
@@ -53,12 +54,15 @@ class ExerciseDescriptionWidget extends StatelessWidget {
                           height: 10,
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.purple,
+                            color:  Color.fromARGB(209, 70, 19, 96),
                             boxShadow: [],
                           ),
                         ),
                       ),
-                      title: Text('Paso ${index + 1}'),
+                      title: Text('Paso ${index + 1}',style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),),
                     ),
                     if (index < numeroPasos - 1)
                       const Divider(
@@ -72,6 +76,10 @@ class ExerciseDescriptionWidget extends StatelessWidget {
               }),
             ),
           ),
+          const SizedBox(height: 100),
+          const MyButton(
+                  onTap: null, buttonText: 'Start Exercise',
+                ),
         ],
       ),
     );

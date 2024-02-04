@@ -15,13 +15,13 @@ class MyButton extends StatelessWidget {
         padding: const EdgeInsets.all(25),
         margin: const EdgeInsets.symmetric(horizontal: 25),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(40), // Ajusta el valor para redondear el borde
           gradient: const LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [
-              Color.fromARGB(255, 66, 104, 170), // Color izquierdo
-              Color.fromARGB(255, 30, 87, 153),  // Color derecho
+              Color.fromARGB(248, 237, 246, 188), // Color izquierdo
+              Color.fromARGB(123, 217, 119, 222),  // Color derecho
             ],
           ),
         ),
@@ -29,7 +29,7 @@ class MyButton extends StatelessWidget {
           child: Text(
             buttonText, // Utiliza el nuevo parámetro para el texto del botón
             style: const TextStyle(
-              color: Colors.white,
+              color: Color.fromARGB(255, 0, 0, 0),
               fontWeight: FontWeight.bold,
               fontSize: 16,
             ),

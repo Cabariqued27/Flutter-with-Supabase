@@ -5,10 +5,10 @@ class ExerciseDescriptionWidget extends StatelessWidget {
   final int numeroPasos;
 
   const ExerciseDescriptionWidget({
-    super.key,
+    Key? key,
     required this.texto,
     required this.numeroPasos,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +18,12 @@ class ExerciseDescriptionWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 50), // Mover la tarjeta más abajo
+          const SizedBox(height: 50),
           SizedBox(
             height: 200,
             child: Card(
               margin: EdgeInsets.zero,
               color: const Color.fromARGB(255, 124, 163, 194),
-              // Añadir esta línea para establecer el color azul
               child: Padding(
                 padding: const EdgeInsets.all(16),
                 child: Center(
@@ -42,10 +41,8 @@ class ExerciseDescriptionWidget extends StatelessWidget {
           const SizedBox(height: 20),
           Card(
             color: const Color.fromARGB(255, 255, 255, 255),
-            child: ListView.builder(
-              shrinkWrap: false,
-              itemCount: numeroPasos,
-              itemBuilder: (context, index) {
+            child: Column(
+              children: List.generate(numeroPasos, (index) {
                 return Column(
                   children: [
                     ListTile(
@@ -63,9 +60,7 @@ class ExerciseDescriptionWidget extends StatelessWidget {
                       ),
                       title: Text('Paso ${index + 1}'),
                     ),
-                    if (index <
-                        numeroPasos -
-                            1) // Agregar Divider solo para elementos excepto el último
+                    if (index < numeroPasos - 1)
                       const Divider(
                         color: Color.fromARGB(255, 215, 205, 205),
                         thickness: 1,
@@ -74,10 +69,9 @@ class ExerciseDescriptionWidget extends StatelessWidget {
                       ),
                   ],
                 );
-              },
+              }),
             ),
-          )
-          
+          ),
         ],
       ),
     );

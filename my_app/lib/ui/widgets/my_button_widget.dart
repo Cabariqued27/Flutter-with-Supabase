@@ -16,12 +16,12 @@ class MyButton extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 25),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
             colors: [
-              const Color.fromARGB(255, 66, 104, 170), // Color izquierdo
-              const Color.fromARGB(255, 30, 87, 153),  // Color derecho
+              Color.fromARGB(255, 66, 104, 170), // Color izquierdo
+              Color.fromARGB(255, 30, 87, 153),  // Color derecho
             ],
           ),
         ),

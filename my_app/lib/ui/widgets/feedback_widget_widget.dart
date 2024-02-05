@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/domain/models/feeling_model.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -186,9 +187,16 @@ class _FeelingWidgetState extends State<FeelingWidget> {
     );
   }
 
-  void updateFeeling(String feeling) {
+  void updateFeeling(String feeling) async {
     setState(() {
       selectedFeeling = feeling;
     });
+
+    
+    Feeling newfe = Feeling(
+      feelingc: feeling
+    );
+     await newfe.saveToSupabase(newfe);
+    
   }
 }

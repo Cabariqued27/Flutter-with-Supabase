@@ -29,34 +29,90 @@ class _FeelingWidgetState extends State<FeelingWidget> {
       children: [
         // Contenedor circular de fondo
         Positioned(
-          left: -50, // Ajusta la posición izquierda según tu preferencia
+          left: -70,
+          top: -20,
           child: Container(
             decoration: BoxDecoration(
-              color: const Color.fromARGB(37, 77, 200, 228),
+              gradient: const RadialGradient(
+                center: Alignment(0, 0),
+                radius: 0.5,
+                colors: [
+                  Color.fromARGB(255, 255, 192, 203), // Rosado
+                  Color.fromARGB(240, 255, 192, 203),
+                  Color.fromARGB(220, 255, 192, 203),
+                  Color.fromARGB(200, 255, 192, 203),
+                  Color.fromARGB(180, 255, 192, 203),
+                  Color.fromARGB(160, 255, 192, 203),
+                  Color.fromARGB(140, 255, 192, 203),
+                  Color.fromARGB(120, 255, 192, 203),
+                  Color.fromARGB(100, 255, 192, 203),
+                  Color.fromARGB(50, 255, 255, 255), // Blanco transparente
+                ],
+                stops: [
+                  0.1,
+                  0.2,
+                  0.3,
+                  0.4,
+                  0.5,
+                  0.6,
+                  0.7,
+                  0.8,
+                  0.9,
+                  1.0
+                ], // Ajusta estos valores según tus preferencias
+              ),
               borderRadius: BorderRadius.circular(100.0),
             ),
             height: 200,
             width: 200,
           ),
         ),
+
         // Contenedor circular en la parte inferior
         Positioned(
-          bottom: 0, // Ajusta la posición inferior según tu preferencia
-          left: MediaQuery.of(context).size.width / 2 - 100, // Centra horizontalmente
+          bottom: 0,
           child: Container(
             decoration: BoxDecoration(
-              color: const Color.fromARGB(37, 77, 200, 228),
+              gradient: const RadialGradient(
+                center: Alignment(0, 0),
+                radius: 0.5,
+                colors: [
+                  Color.fromARGB(255, 135, 206, 250), // Azul
+                  Color.fromARGB(240, 135, 206, 250),
+                  Color.fromARGB(220, 135, 206, 250),
+                  Color.fromARGB(200, 135, 206, 250),
+                  Color.fromARGB(180, 135, 206, 250),
+                  Color.fromARGB(160, 135, 206, 250),
+                  Color.fromARGB(140, 135, 206, 250),
+                  Color.fromARGB(120, 135, 206, 250),
+                  Color.fromARGB(100, 135, 206, 250),
+                  Color.fromARGB(50, 255, 255, 255), // Blanco transparente
+                ],
+                stops: [
+                  0.1,
+                  0.2,
+                  0.3,
+                  0.4,
+                  0.5,
+                  0.6,
+                  0.7,
+                  0.8,
+                  0.9,
+                  1.0
+                ], // Ajusta estos valores según tus preferencias
+              ),
               borderRadius: BorderRadius.circular(100.0),
             ),
             height: 200,
             width: 200,
           ),
         ),
+
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Resto de los elementos
-            SizedBox(height: 70),
+            const SizedBox(height: 150),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -105,8 +161,7 @@ class _FeelingWidgetState extends State<FeelingWidget> {
   Widget buildCustomButton(
       String feeling, String imagePath, Color backgroundColor) {
     return Container(
-      margin: const EdgeInsets.symmetric(
-          vertical: 8.0, horizontal: 2.0),
+      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 2.0),
       child: Column(
         children: [
           ElevatedButton(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/ui/pages/feedback_page.dart';
 import 'package:my_app/ui/widgets/my_button_widget.dart';
 
 class ExerciseDescriptionWidget extends StatelessWidget {
@@ -10,6 +11,11 @@ class ExerciseDescriptionWidget extends StatelessWidget {
     required this.texto,
     required this.numeroPasos,
   }) : super(key: key);
+
+  void start(BuildContext context) {
+    // Aquí puedes agregar la lógica necesaria antes de navegar a FeedBackPage
+    Navigator.pushNamed(context, FeedBackPage.id);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,15 +60,18 @@ class ExerciseDescriptionWidget extends StatelessWidget {
                           height: 10,
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle,
-                            color:  Color.fromARGB(209, 70, 19, 96),
+                            color: Color.fromARGB(209, 70, 19, 96),
                             boxShadow: [],
                           ),
                         ),
                       ),
-                      title: Text('Paso ${index + 1}',style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),),
+                      title: Text(
+                        'Paso ${index + 1}',
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                     if (index < numeroPasos - 1)
                       const Divider(
@@ -77,9 +86,10 @@ class ExerciseDescriptionWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 100),
-          const MyButton(
-                  onTap: null, buttonText: 'Start Exercise',
-                ),
+          MyButton(
+            onTap: () => start(context),
+            buttonText: 'Start Exercise',
+          ),
         ],
       ),
     );

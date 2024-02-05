@@ -1,0 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:my_app/ui/pages/exercise_description_pages.dart';
+import 'package:my_app/ui/pages/feedback_page.dart';
+
+
+var customRoutes = <String, WidgetBuilder>{
+  /// vistas de registro y login
+  ExerciseDescriptionPage.id: (_) => const ExerciseDescriptionPage(),
+  FeedBackPage.id: (_) => const FeedBackPage(),
+
+  ///
+};

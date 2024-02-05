@@ -5,6 +5,7 @@ import 'package:my_app/ui/widgets/feedback_widget_widget.dart';
 
 class FeedBackPage extends StatelessWidget {
   const FeedBackPage({super.key});
+  static String id = 'feedback_page';
 
   @override
   Widget build(BuildContext context) {

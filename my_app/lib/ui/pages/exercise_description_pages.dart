@@ -4,6 +4,7 @@ import 'package:my_app/ui/widgets/exercise_description_widget.dart';
 
 class ExerciseDescriptionPage extends StatelessWidget {
   const ExerciseDescriptionPage({super.key});
+  static String id = 'exercise_description_page';
 
   @override
   Widget build(BuildContext context) {

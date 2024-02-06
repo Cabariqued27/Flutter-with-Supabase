@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/domain/models/feeling_model.dart';
+import 'package:my_app/ui/pages/reaction_page.dart';
+import 'package:my_app/ui/widgets/my_button_widget.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -70,91 +72,92 @@ class _FeelingWidgetState extends State<FeelingWidget> {
         ),
 
         Column(
-  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  children: [
-    // Resto de los elementos
-    const SizedBox(height: 150),
-    Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Center(
-          child: Column(
-            children: [
-              Text(
-                'How do you feel now?',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 20),
-            ],
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            buildCustomButton('Awful', 'assets/awful.png',
-                Color.fromARGB(230, 170, 147, 246)),
-            buildCustomButton('Bad', 'assets/awful.png',
-                Color.fromARGB(207, 81, 125, 247)),
-            buildCustomButton('Okay', 'assets/awful.png',
-                Color.fromARGB(207, 245, 255, 63)),
-            buildCustomButton('Good', 'assets/awful.png',
-                Color.fromARGB(255, 157, 255, 172)),
-            buildCustomButton('Great', 'assets/awful.png',
-                Color.fromARGB(255, 157, 221, 255)),
+            // Resto de los elementos
+            const SizedBox(height: 150),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Center(
+                  child: Column(
+                    children: [
+                      Text(
+                        'How do you feel now?',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    buildCustomButton('Awful', 'assets/awful.png',
+                        Color.fromARGB(230, 170, 147, 246)),
+                    buildCustomButton('Bad', 'assets/awful.png',
+                        Color.fromARGB(207, 81, 125, 247)),
+                    buildCustomButton('Okay', 'assets/awful.png',
+                        Color.fromARGB(207, 245, 255, 63)),
+                    buildCustomButton('Good', 'assets/awful.png',
+                        Color.fromARGB(255, 157, 255, 172)),
+                    buildCustomButton('Great', 'assets/awful.png',
+                        Color.fromARGB(255, 157, 221, 255)),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  'Respuesta seleccionada: $selectedFeeling',
+                  style: const TextStyle(fontSize: 16),
+                ),
+             
+              ],
+            ),
+
+            // Contenedor circular en la parte inferior
+            Container(
+              margin: const EdgeInsets.only(
+                  top: 230,
+                  right: 200), // Ajusta la posición según sea necesario
+              decoration: BoxDecoration(
+                gradient: const RadialGradient(
+                  center: Alignment(0, 0),
+                  radius: 0.5,
+                  colors: [
+                    Color.fromARGB(255, 135, 206, 250), // Azul
+                    Color.fromARGB(240, 135, 206, 250),
+                    Color.fromARGB(220, 135, 206, 250),
+                    Color.fromARGB(200, 135, 206, 250),
+                    Color.fromARGB(180, 135, 206, 250),
+                    Color.fromARGB(160, 135, 206, 250),
+                    Color.fromARGB(140, 135, 206, 250),
+                    Color.fromARGB(120, 135, 206, 250),
+                    Color.fromARGB(100, 135, 206, 250),
+                    Color.fromARGB(50, 255, 255, 255), // Blanco transparente
+                  ],
+                  stops: [
+                    0.05, // Ajusta estos valores para que la transición sea más suave
+                    0.15,
+                    0.25,
+                    0.35,
+                    0.45,
+                    0.55,
+                    0.65,
+                    0.75,
+                    0.85,
+                    1.0
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(100.0),
+              ),
+              height: 200,
+              width: 200,
+            ),
           ],
         ),
-        const SizedBox(height: 20),
-        Text(
-          'Respuesta seleccionada: $selectedFeeling',
-          style: const TextStyle(fontSize: 16),
-        ),
-      ],
-    ),
-
-    // Contenedor circular en la parte inferior
-    Container(
-  margin: const EdgeInsets.only(top: 230, right: 200), // Ajusta la posición según sea necesario
-  decoration: BoxDecoration(
-    gradient: const RadialGradient(
-      center: Alignment(0, 0),
-      radius: 0.5,
-      colors: [
-        Color.fromARGB(255, 135, 206, 250), // Azul
-        Color.fromARGB(240, 135, 206, 250),
-        Color.fromARGB(220, 135, 206, 250),
-        Color.fromARGB(200, 135, 206, 250),
-        Color.fromARGB(180, 135, 206, 250),
-        Color.fromARGB(160, 135, 206, 250),
-        Color.fromARGB(140, 135, 206, 250),
-        Color.fromARGB(120, 135, 206, 250),
-        Color.fromARGB(100, 135, 206, 250),
-        Color.fromARGB(50, 255, 255, 255), // Blanco transparente
-      ],
-      stops: [
-        0.05, // Ajusta estos valores para que la transición sea más suave
-        0.15,
-        0.25,
-        0.35,
-        0.45,
-        0.55,
-        0.65,
-        0.75,
-        0.85,
-        1.0
-      ],
-    ),
-    borderRadius: BorderRadius.circular(100.0),
-  ),
-  height: 200,
-  width: 200,
-),
-
-  ],
-),
-
       ],
     );
   }
@@ -190,13 +193,10 @@ class _FeelingWidgetState extends State<FeelingWidget> {
   void updateFeeling(String feeling) async {
     setState(() {
       selectedFeeling = feeling;
+      print('Selected feeling updated: $selectedFeeling');
+      Navigator.pushNamed(context, SocialPage.id);
     });
-
-    
-    Feeling newfe = Feeling(
-      feelingc: feeling
-    );
-     await newfe.saveToSupabase(newfe);
-    
   }
+  
+  
 }

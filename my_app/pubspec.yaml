@@ -74,11 +74,13 @@ flutter:
 
   assets:
      - .env
-     - assets/awful.png
-     - assets/check.png
-     - assets/facebook.png
-     - assets/ig.png
-     - assets/x.png
+     - assets/icons/emotions/angel.png
+     - assets/icons/emotions/good.png
+     - assets/icons/emotions/great.png
+     - assets/icons/others/check.png
+     - assets/icons/social/facebook.png
+     - assets/icons/social/ig.png
+     - assets/icons/social/x.png
      
 
   # An image asset can refer to one or more resolution-specific "variants", see

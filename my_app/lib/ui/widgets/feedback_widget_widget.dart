@@ -113,7 +113,7 @@ class _FeelingWidgetState extends State<FeelingWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Resto de los elementos
-            const SizedBox(height: 178),
+            const SizedBox(height: 70),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -134,19 +134,19 @@ class _FeelingWidgetState extends State<FeelingWidget> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    buildCustomButton('Awful', 'assets/awful.png',
+                    buildCustomButton('Awful', 'assets/icons/emotions/good.png',
                         Color.fromARGB(230, 170, 147, 246)),
-                    buildCustomButton('Bad', 'assets/awful.png',
-                        Color.fromARGB(207, 81, 125, 247)),
-                    buildCustomButton('Okay', 'assets/awful.png',
-                        Color.fromARGB(207, 245, 255, 63)),
-                    buildCustomButton('Good', 'assets/awful.png',
-                        Color.fromARGB(255, 157, 255, 172)),
-                    buildCustomButton('Great', 'assets/awful.png',
+                    buildCustomButton('Bad', 'assets/icons/emotions/good.png',
+                        Color.fromARGB(207, 81, 247, 139)),
+                    buildCustomButton('Okay', 'assets/icons/emotions/angel.png',
+                        Color.fromARGB(255, 245, 255, 133)),
+                    buildCustomButton('Good', 'assets/icons/emotions/good.png',
+                        Color.fromARGB(255, 157, 255, 171)),
+                    buildCustomButton('Great', 'assets/icons/emotions/great.png',
                         Color.fromARGB(255, 157, 221, 255)),
                   ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 131),
                 Text(
                   'Respuesta seleccionada: $selectedFeeling',
                   style: const TextStyle(fontSize: 16),
@@ -202,32 +202,42 @@ class _FeelingWidgetState extends State<FeelingWidget> {
   }
 
   Widget buildCustomButton(
-      String feeling, String imagePath, Color backgroundColor) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 2.0),
-      child: Column(
-        children: [
-          ElevatedButton(
-            onPressed: () {
-              updateFeeling(feeling);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: backgroundColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
+  String feeling, String imagePath, Color backgroundColor) {
+  return Container(
+    margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 2.0),
+    width: 75, // Ajusta el ancho del contenedor
+    height: 100, // Ajusta la altura del contenedor
+    child: Column(
+      children: [
+        ElevatedButton(
+          onPressed: () {
+            updateFeeling(feeling);
+          },
+          style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.zero, // Eliminar el espacio interno del botón
+            minimumSize: Size(42, 42), // Tamaño mínimo del botón
+            backgroundColor: backgroundColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15.0),
             ),
-            child: Image.asset(imagePath, width: 30, height: 70),
           ),
-          const SizedBox(height: 8),
-          Text(
-            feeling,
-            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+          child: SizedBox(
+            width: 70,
+            height: 70,
+            child: Image.asset(imagePath),
           ),
-        ],
-      ),
-    );
-  }
+        ),
+        const SizedBox(height: 8),
+        Text(
+          feeling,
+          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+        ),
+      ],
+    ),
+  );
+}
+
+
 
   void updateFeeling(String feeling) async {
     setState(() {

@@ -54,7 +54,7 @@ class Social extends StatelessWidget {
                       color: Colors.transparent, // Fondo transparente
                     ),
                     child: Image.asset(
-                      'assets/check.png',
+                      'assets/icons/others/check.png',
                       height: 250, // Ajusta la altura según tus necesidades
                       width: 250, // Ajusta el ancho según tus necesidades
                     ),
@@ -91,7 +91,7 @@ class Social extends StatelessWidget {
                       color: Colors.transparent, // Fondo transparente
                     ),
                     child: Image.asset(
-                      'assets/facebook.png',
+                      'assets/icons/social/facebook.png',
                       height: 50, // Ajusta la altura según tus necesidades
                       width: 50, // Ajusta el ancho según tus necesidades
                     ),
@@ -103,7 +103,7 @@ class Social extends StatelessWidget {
                       color: Colors.transparent, // Fondo transparente
                     ),
                     child: Image.asset(
-                      'assets/ig.png',
+                      'assets/icons/social/ig.png',
                       height: 50, // Ajusta la altura según tus necesidades
                       width: 50, // Ajusta el ancho según tus necesidades
                     ),
@@ -114,7 +114,7 @@ class Social extends StatelessWidget {
                       color: Colors.transparent, // Fondo transparente
                     ),
                     child: Image.asset(
-                      'assets/x.png',
+                      'assets/icons/social/x.png',
                       height: 50, // Ajusta la altura según tus necesidades
                       width: 50, // Ajusta el ancho según tus necesidades
                     ),

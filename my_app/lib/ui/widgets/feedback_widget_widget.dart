@@ -69,12 +69,51 @@ class _FeelingWidgetState extends State<FeelingWidget> {
             width: 200,
           ),
         ),
+        Positioned(
+          right: -70,
+          bottom: -20,
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: const RadialGradient(
+                center: Alignment(0, 0),
+                radius: 0.5,
+                colors: [
+                  Color.fromARGB(255, 255, 192, 203), // Rosado
+                  Color.fromARGB(240, 255, 192, 203),
+                  Color.fromARGB(220, 255, 192, 203),
+                  Color.fromARGB(200, 255, 192, 203),
+                  Color.fromARGB(180, 255, 192, 203),
+                  Color.fromARGB(160, 255, 192, 203),
+                  Color.fromARGB(140, 255, 192, 203),
+                  Color.fromARGB(120, 255, 192, 203),
+                  Color.fromARGB(100, 255, 192, 203),
+                  Color.fromARGB(50, 255, 255, 255), // Blanco transparente
+                ],
+                stops: [
+                  0.1,
+                  0.2,
+                  0.3,
+                  0.4,
+                  0.5,
+                  0.6,
+                  0.7,
+                  0.8,
+                  0.9,
+                  1.0
+                ], // Ajusta estos valores según tus preferencias
+              ),
+              borderRadius: BorderRadius.circular(100.0),
+            ),
+            height: 200,
+            width: 200,
+          ),
+        ),
 
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // Resto de los elementos
-            const SizedBox(height: 150),
+            const SizedBox(height: 178),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -112,33 +151,33 @@ class _FeelingWidgetState extends State<FeelingWidget> {
                   'Respuesta seleccionada: $selectedFeeling',
                   style: const TextStyle(fontSize: 16),
                 ),
-             
               ],
             ),
 
             // Contenedor circular en la parte inferior
             Container(
               margin: const EdgeInsets.only(
-                  top: 230,
-                  right: 200), // Ajusta la posición según sea necesario
+                top: 300,
+                right: 200,
+              ),
               decoration: BoxDecoration(
                 gradient: const RadialGradient(
                   center: Alignment(0, 0),
                   radius: 0.5,
                   colors: [
-                    Color.fromARGB(255, 135, 206, 250), // Azul
-                    Color.fromARGB(240, 135, 206, 250),
-                    Color.fromARGB(220, 135, 206, 250),
-                    Color.fromARGB(200, 135, 206, 250),
-                    Color.fromARGB(180, 135, 206, 250),
-                    Color.fromARGB(160, 135, 206, 250),
-                    Color.fromARGB(140, 135, 206, 250),
-                    Color.fromARGB(120, 135, 206, 250),
-                    Color.fromARGB(100, 135, 206, 250),
+                    Color.fromARGB(255, 173, 216, 230), // Azul claro
+                    Color.fromARGB(240, 173, 216, 230),
+                    Color.fromARGB(220, 173, 216, 230),
+                    Color.fromARGB(200, 173, 216, 230),
+                    Color.fromARGB(180, 173, 216, 230),
+                    Color.fromARGB(160, 173, 216, 230),
+                    Color.fromARGB(140, 173, 216, 230),
+                    Color.fromARGB(120, 173, 216, 230),
+                    Color.fromARGB(100, 173, 216, 230),
                     Color.fromARGB(50, 255, 255, 255), // Blanco transparente
                   ],
                   stops: [
-                    0.05, // Ajusta estos valores para que la transición sea más suave
+                    0.05,
                     0.15,
                     0.25,
                     0.35,
@@ -147,10 +186,11 @@ class _FeelingWidgetState extends State<FeelingWidget> {
                     0.65,
                     0.75,
                     0.85,
-                    1.0
+                    1.0,
                   ],
                 ),
-                borderRadius: BorderRadius.circular(100.0),
+                borderRadius:
+                    BorderRadius.circular(50.0), // Reducción del radio de borde
               ),
               height: 200,
               width: 200,
@@ -196,12 +236,6 @@ class _FeelingWidgetState extends State<FeelingWidget> {
       Navigator.pushNamed(context, SocialPage.id);
     });
 
-    
-await supabase
-    .from('first_feeling')
-    .insert({'feeling': selectedFeeling});
-    
+    await supabase.from('first_feeling').insert({'feeling': selectedFeeling});
   }
-  
-  
 }

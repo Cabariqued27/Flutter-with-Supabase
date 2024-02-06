@@ -75,6 +75,12 @@ flutter:
   assets:
      - .env
      - assets/awful.png
+     - assets/check.png
+     - assets/facebook.png
+     - assets/ig.png
+     - assets/x.png
+     
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

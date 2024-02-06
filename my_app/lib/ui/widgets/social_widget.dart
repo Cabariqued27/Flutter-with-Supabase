@@ -11,91 +11,128 @@ class Social extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 100),
-      child: Column(
-        children: [
-          const Text(
-            'Congratulations',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+    return Stack(
+      children: [
+        // Fondo circular con gradiente
+        Container(
+          decoration: BoxDecoration(
+            gradient: const RadialGradient(
+              center: Alignment(0, 0),
+              radius: 0.5,
+              colors: [
+                Color.fromARGB(255, 255, 192, 203), // Rosado
+                Color.fromARGB(240, 255, 192, 203),
+                Color.fromARGB(220, 255, 192, 203),
+                Color.fromARGB(200, 255, 192, 203),
+                Color.fromARGB(180, 255, 192, 203),
+                Color.fromARGB(160, 255, 192, 203),
+                Color.fromARGB(140, 255, 192, 203),
+                Color.fromARGB(120, 255, 192, 203),
+                Color.fromARGB(100, 255, 192, 203),
+                Color.fromARGB(50, 255, 255, 255), // Blanco transparente
+              ],
+              stops: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
             ),
+            borderRadius: BorderRadius.circular(100.0),
           ),
-          const SizedBox(height: 10),
-          const Text(
-            'Default text',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.grey,
-            ),
-          ),
-          const SizedBox(height: 20),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          height: 200,
+          width: 200,
+        ),
+
+        // Contenido de la página
+        Container(
+          margin: const EdgeInsets.only(top: 100),
+          child: Column(
             children: [
-              SocialMediaButton(
-                icon: Icons.camera_alt,
-                color: Colors.purple,
-                label: 'Instagram',
+              // Row para la imagen y el texto centrado
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Imagen de verificación
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.transparent, // Fondo transparente
+                    ),
+                    child: Image.asset(
+                      'assets/check.png',
+                      height: 250, // Ajusta la altura según tus necesidades
+                      width: 250, // Ajusta el ancho según tus necesidades
+                    ),
+                  ),
+                  // Espaciado entre la imagen y el texto
+                  const SizedBox(height: 30),
+                  const Text(
+                    'Congratulations',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
-              SocialMediaButton(
-                icon: Icons.face,
-                color: Colors.blue,
-                label: 'Facebook',
+              const SizedBox(height: 10),
+              const Center(
+                child: Text(
+                  'Lorem ipsum dolor sit amet consectetur adipiscing, elit congue porta accumsan sociosqu, dictumst montes facilisis netus velit.',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
-              SocialMediaButton(
-                icon: Icons.alternate_email,
-                color: Colors.red,
-                label: 'Google',
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  // Imagen de verificación
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.transparent, // Fondo transparente
+                    ),
+                    child: Image.asset(
+                      'assets/facebook.png',
+                      height: 50, // Ajusta la altura según tus necesidades
+                      width: 50, // Ajusta el ancho según tus necesidades
+                    ),
+                  ),
+                  // Espaciado entre la imagen y el texto
+                  
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.transparent, // Fondo transparente
+                    ),
+                    child: Image.asset(
+                      'assets/ig.png',
+                      height: 50, // Ajusta la altura según tus necesidades
+                      width: 50, // Ajusta el ancho según tus necesidades
+                    ),
+                  ),
+                 
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.transparent, // Fondo transparente
+                    ),
+                    child: Image.asset(
+                      'assets/x.png',
+                      height: 50, // Ajusta la altura según tus necesidades
+                      width: 50, // Ajusta el ancho según tus necesidades
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-          const SizedBox(height: 20),
+
+              const SizedBox(height: 120),
               MyButton(
                 onTap: () => start(context),
                 buttonText: 'Back to Home',
               ),
-        ],
-      ),
-    );
-  }
-}
-
-class SocialMediaButton extends StatelessWidget {
-  final IconData icon;
-  final Color color;
-  final String label;
-
-  const SocialMediaButton(
-      {Key? key, required this.icon, required this.color, required this.label})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        // Add your action here when the button is pressed
-        print('Button pressed: $label');
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: color,
-        padding: const EdgeInsets.all(16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon, color: Colors.white),
-          const SizedBox(height: 10),
-          Text(
-            label,
-            style: const TextStyle(color: Colors.white, fontSize: 18),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
+
+

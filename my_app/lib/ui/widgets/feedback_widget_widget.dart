@@ -196,6 +196,7 @@ class _FeelingWidgetState extends State<FeelingWidget> {
       print('Selected feeling updated: $selectedFeeling');
       Navigator.pushNamed(context, SocialPage.id);
     });
+    
   }
   
   

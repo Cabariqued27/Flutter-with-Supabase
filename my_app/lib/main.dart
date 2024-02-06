@@ -2,10 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:my_app/routes/routes.dart';
 import 'package:my_app/ui/pages/exercise_description_pages.dart';
-import 'package:my_app/ui/pages/feedback_page.dart';
-import 'package:my_app/ui/pages/login_page.dart';
-import 'package:my_app/ui/pages/reaction_page.dart';
-import 'package:my_app/ui/pages/sign_up_page.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {

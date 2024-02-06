@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:my_app/ui/widgets/feedback_widget_widget.dart';
 import 'package:my_app/ui/widgets/social_widget.dart';
  // Asegúrate de importar el archivo correcto
 

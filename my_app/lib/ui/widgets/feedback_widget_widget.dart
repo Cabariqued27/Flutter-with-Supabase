@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/domain/models/feeling_model.dart';
 import 'package:my_app/main.dart';
 import 'package:my_app/ui/pages/reaction_page.dart';
-import 'package:my_app/ui/widgets/my_button_widget.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -201,7 +199,7 @@ class _FeelingWidgetState extends State<FeelingWidget> {
     
 await supabase
     .from('first_feeling')
-    .insert({'id':'15','feeling': 'The Shire'});
+    .insert({'feeling': selectedFeeling});
     
   }
   

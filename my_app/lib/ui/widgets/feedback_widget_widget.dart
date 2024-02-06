@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/domain/models/feeling_model.dart';
+import 'package:my_app/main.dart';
 import 'package:my_app/ui/pages/reaction_page.dart';
 import 'package:my_app/ui/widgets/my_button_widget.dart';
 
@@ -196,6 +197,11 @@ class _FeelingWidgetState extends State<FeelingWidget> {
       print('Selected feeling updated: $selectedFeeling');
       Navigator.pushNamed(context, SocialPage.id);
     });
+
+    
+await supabase
+    .from('first_feeling')
+    .insert({'id':'15','feeling': 'The Shire'});
     
   }
   
